@@ -1,0 +1,162 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container-spmk {
+  padding: 0px 0px 0px 2px; /* top right bottom left */
+}
+
+.surat-header {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header img {
+  width: 15%;
+  height: 15%;
+}
+
+.surat-header-text-bold {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+}
+.surat-header-text-light {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: -50px;
+}
+.separator-black {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat-ringkasan-kontrak {
+  color: #000;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.spmk-nomor-paket-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.spmk-justify-text {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.spmk-text-container {
+  text-align: left;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+.spmk-container {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spmk-intro {
+  margin-bottom: 12px;
+}
+
+.spmk-item {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.spmk-label {
+  flex: 0 0 220px; /* Menyesuaikan lebar label agar rata */
+  font-weight: bold;
+}
+
+.spmk-separator {
+  margin-right: 8px;
+}
+
+.spmk-value {
+  flex: 1;
+  text-align: justify;
+}
+
+.ttd-spmk-layout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  gap: 80px;
+}
+
+.ttd-spmk-layout-lower {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 80px;
+}
+.ttd-spmk-text-container {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-page-content {
+  margin-top: 90px;
+}

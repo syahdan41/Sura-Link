@@ -1,0 +1,167 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container {
+  width: 21cm; /* Lebar A4 dalam cm */
+  height: 29.7cm; /* Tinggi A4 dalam cm */
+  background: white;
+  margin: auto;
+  padding: 68px 68px 66px 68px; /* top right bottom left */
+}
+
+.surat-header {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header img {
+  width: 15%;
+  height: 15%;
+}
+
+.surat-header-text-bold {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+}
+.surat-header-text-light {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: -50px;
+}
+.separator-black {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat-ringkasan-kontrak {
+  color: #000;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.tittle-nomor-ringkasan-kontrak {
+  color: #000;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+.ringkasan-container {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  margin-top: 35px;
+}
+
+.ringkasan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #000;
+  margin-top: 25px;
+  table-layout: fixed;
+}
+
+.label-ringkasan {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 250px;
+  vertical-align: top;
+  padding: 4px 0;
+}
+
+.separator-ringkasan {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  text-align: left;
+  vertical-align: top;
+  padding: 4px 8px;
+}
+
+.value-ringkasan {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  vertical-align: top;
+  padding: 4px 0;
+  word-break: break-word;
+}
+
+.surat-ttd-ringkasan {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 500px;
+  margin-top: 55px;
+}
+
+.identity-ringkasan-kontrak {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Jika ingin teks di tengah */
+  margin-left: 500px;
+  margin-top: 75px;
+}
+
+.name {
+  text-decoration: underline;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.nip {
+  margin-top: 3px; /* Mengurangi jarak agar lebih rapat */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}

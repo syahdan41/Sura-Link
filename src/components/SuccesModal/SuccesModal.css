@@ -1,0 +1,45 @@
+.succes-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.185);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.succes-modal-content-template {
+  background: white;
+  padding: 20px 20px 20px 28px;
+  border-radius: 80px;
+  width: 380px;
+  height: 480px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.succes-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 77px 64px 77px;
+}
+
+.succes-modal-content img {
+  width: 234px;
+  height: 234px;
+}
+
+.succes-modal-content p {
+  color: #1a64b0;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 500;
+  width: 368px;
+  text-align: center;
+}

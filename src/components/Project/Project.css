@@ -1,0 +1,157 @@
+.content-adjuster {
+  display: flex;
+}
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 207px;
+  min-height: 3814px;
+  background-color: #ffff;
+  padding-top: 100px;
+  padding-left: 20px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+}
+
+.position-absolute {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.card-project {
+  width: 167px;
+  height: 208px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-project.selectedCard {
+  width: 167px;
+  height: 208px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #1a64b0;
+}
+
+.card-project:hover {
+  width: 167px;
+  height: 208px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #1a64b0;
+}
+
+.card-project img {
+  width: 147px;
+  height: 118px;
+}
+
+.info-box-project {
+  background-color: #1a64b0;
+  width: 147px;
+  height: 70px;
+}
+
+.text-and-option-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 22.25px 21px 10px;
+}
+
+.text-and-option-project p {
+  color: #ffffff;
+  font-size: 9.9px;
+  font-weight: 500;
+  font-family: "Poppins";
+  text-align: center;
+  width: 114.5px;
+  height: 42px;
+}
+
+.text-and-option-project img {
+  position: relative;
+  top: -15px;
+  bottom: 0px;
+  left: 9px;
+  width: 2.4px;
+  height: 12.5px;
+}
+
+.card-style-dashed-project {
+  border: 3px dashed #1a64b0;
+  background-color: #ffffff;
+  width: 164px;
+  height: 208px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-style-dashed-project img {
+  width: 60px;
+  height: 70px;
+}
+
+.button-style-project {
+  background-color: #e5e5e5;
+  width: 102px;
+  height: 28px;
+  padding: 5px 10px 5px 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  color: #1a64b0;
+  font-weight: bold;
+  font-family: "Poppins";
+  margin-top: 25px;
+}
+
+.button-style-project:hover {
+  background-color: #1a64b0;
+  color: #ffffff;
+  width: 102px;
+  height: 28px;
+  padding: 5px 10px 5px 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+
+  font-weight: bold;
+  font-family: "Poppins";
+  margin-top: 25px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 20px 0px 0px;
+}
+.bluebar-tittle {
+  background-color: #1a64b0;
+  color: #ffffff;
+  font-family: "Poppins";
+  font-size: 24px;
+  width: 1654px;
+  margin-left: 228.1px;
+  padding: 20px 0px 20px 20px;
+}
+
+.react-datepicker__portal {
+  z-index: 10001 !important; /* Lebih tinggi dari overlay modal */
+}

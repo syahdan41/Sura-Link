@@ -1,0 +1,149 @@
+.history-content-layout {
+  margin: 30px 0px 0px 100px;
+}
+
+.history-text-content {
+  display: flex;
+}
+
+.history-text-content p {
+  width: 129px;
+  height: 68px;
+  font-size: 32px;
+  color: black;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.top-menu {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0px 0px 252px;
+  font-size: 24px;
+  color: black;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.menu.selected {
+  border-bottom: 3px solid #000;
+  margin-bottom: 47px;
+}
+
+.content-table-layout {
+  display: flex;
+}
+
+.grey-large-bar {
+  border-top: 30px solid #a7a7a7;
+  width: 261px;
+}
+
+.grey-vertical-bar {
+  border-left: 1px solid #a7a7a7;
+  height: 572px;
+}
+
+.header-table-layout {
+  display: flex;
+}
+
+.header-table-layout p {
+  margin-top: 3px;
+  font-family: "Poppins";
+}
+
+.icon-text {
+  display: flex;
+  gap: 4px;
+  margin-left: 73px;
+  margin-right: 450px;
+}
+
+.icon-text img {
+  width: 27px;
+  height: 27px;
+}
+
+.icon-text p {
+  margin-top: 3px;
+}
+
+.data-modifikasi {
+  margin-right: 360px;
+  margin-top: 3px;
+  font-family: "Poppins";
+}
+
+.grey-horizontal-bar {
+  border-top: 1px solid #a7a7a7;
+  width: 1091px;
+  position: absolute;
+  top: 280px;
+  left: 415px;
+  bottom: 0px;
+}
+
+.data-history-layout {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 415px;
+  top: 317px;
+
+  width: 990px;
+  gap: 30px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 15.5px;
+}
+
+.flex-row img {
+  width: 50px;
+  height: 52px;
+}
+
+.flex-column-history {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins";
+  margin-top: 0px;
+  color: #515151;
+  font-weight: 600;
+}
+
+.folder-location {
+  margin-top: -10px;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: normal;
+  color: #515151;
+}
+
+.date-style {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: normal;
+  color: #515151;
+  margin: 20px 0px 20px 120px;
+}
+
+.triple-dot-grey img {
+  position: relative;
+  width: 5px;
+  height: 25px;
+  left: 398px;
+  top: 20px;
+}
+
+.grey-separator-bar-history {
+  border-bottom: 1px solid #515151;
+  height: 1px;
+  width: 1092px;
+  margin-left: 2px;
+  margin-top: -20px;
+}

@@ -1,0 +1,233 @@
+.preview-layout {
+  margin: 75px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container-kwitansi-ui {
+  width: 18cm; /* Lebar A4 dalam cm */
+  height: 29.7cm; /* Tinggi A4 dalam cm */
+  background: white;
+  margin: auto;
+  padding: 8px;
+}
+
+.kwitansi-content-ui {
+  padding: 10px;
+  height: 29cm;
+  display: flex;
+  flex-direction: column;
+}
+
+.kwitansi-tittle-bar-ui {
+  background-color: #bfbfbf;
+
+  font-size: 28px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  letter-spacing: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.bank-detail-ui {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: 290px;
+}
+
+.bank-container-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Jarak antar baris */
+  max-width: 600px; /* Bisa disesuaikan sesuai kebutuhan */
+  margin-top: 20px;
+}
+
+.bank-label-ui {
+  min-width: 100px; /* Sesuaikan agar label sejajar */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.bank-separator-ui {
+  margin: 0 5px; /* Jarak antara ":" dan value */
+}
+
+.bank-value-ui {
+  flex: 1; /* Biar teks di sisi kanan tidak kepotong */
+}
+
+.bank-item-ui {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.kwitansi-detail-container-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 10px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 5px;
+  text-align: left;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-weight: lighter;
+  align-items: start;
+  margin-top: 15px;
+}
+
+.label-detail-kwitansi-ui {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 175px;
+}
+.separator-detail-kwitansi-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 0px;
+}
+.value-detail-kwitansi-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  flex: 1;
+}
+
+.jumlah-layout-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 10px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 5px;
+  text-align: left;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-weight: bold;
+  align-items: start;
+  margin-top: 75px;
+  background-color: #fcfcfc;
+  border: 2px solid #000;
+  max-width: 300px;
+  padding: 20px;
+  font-style: italic;
+}
+
+.label-jumlah-kwitansi-ui {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 22px;
+  min-width: 0px;
+}
+.separator-jumlah-kwitansi-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 22px;
+  min-width: 10px;
+  margin-left: 0px;
+}
+.value-jumlah-kwitansi-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 22px;
+  flex: 1;
+  margin-left: 40px;
+}
+
+.tertanda-layout-ui {
+  display: flex;
+  gap: 90px;
+  margin-top: 100px;
+}
+
+.ttd-1-ui {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 250px;
+  margin-top: 30px;
+}
+
+.setuju-dibayar-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.ttd-2-ui {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.tanggal-kwitansi-layout-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+.yang-menerima-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.ttd-kwitansi-ui {
+  margin-top: 120px;
+}
+
+.ttd-bold-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.ttd-nip-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 17px;
+  font-weight: lighter;
+  margin-top: 3px;
+}

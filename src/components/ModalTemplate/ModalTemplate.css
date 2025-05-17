@@ -1,0 +1,114 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.185);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content-template {
+  background: white;
+  padding: 20px 20px 20px 28px;
+  border-radius: 10px;
+  width: 1340px;
+  height: 720px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title-dokumen {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+.title-dokumen img {
+  width: 19px;
+  height: 32px;
+  margin-top: 29px;
+}
+
+.title-dokumen h1 {
+  color: #1a64b0;
+  font-family: "Poppins";
+  margin-left: 8px;
+}
+
+.container-template {
+  width: 1170px;
+  height: 480px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: auto; /* Scroll jika melebihi batas */
+  padding: 10px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.card-project-template {
+  width: 220px;
+  height: 310px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-project-template:hover {
+  width: 220px;
+  height: 310px;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #1a64b0;
+}
+
+.card-project-template img {
+  width: 180px;
+  height: 187px;
+}
+
+.info-box-project-template {
+  background-color: #1a64b0;
+  width: 179px;
+  height: 73px;
+}
+
+.text-and-option-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 22.25px 21px 10px;
+}
+
+.text-and-option-template p {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: "Poppins";
+  text-align: center;
+  width: 159px;
+  height: 34px;
+}
+
+.text-and-option-template img {
+  position: relative;
+  top: -10px;
+  bottom: 0px;
+  left: 9px;
+  width: 2.4px;
+  height: 12.5px;
+}

@@ -1,0 +1,48 @@
+.modal-body-delete {
+  position: relative;
+  display: flex;
+  left: 0px;
+  top: 0px;
+}
+
+.content-modal {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  border-radius: 8px;
+  background-color: #fff;
+  width: 110px;
+  height: 30px;
+  border-color: #fff;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 0px;
+  color: #a3a2a2;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Popppins";
+}
+
+.content-modal:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  border-radius: 8px;
+  background-color: #acadad;
+  width: 110px;
+  height: 30px;
+  border-color: #acadad;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 0px;
+  color: #383838;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Popppins";
+}
+
+.content-modal img {
+  width: 14px;
+  height: 14px;
+  margin-top: -1px;
+}

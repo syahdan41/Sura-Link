@@ -1,0 +1,209 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container-landscape {
+  width: 29.7cm; /* Lebar A4 dalam mode landscape */
+  height: 21cm; /* Tinggi A4 dalam mode landscape */
+  background: white;
+  margin: auto;
+  padding: 1.83cm 0cm 0.49cm 1.75cm; /* top right bottom left */
+  border: 1px solid #000;
+}
+.bap-header-container {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 25px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 16.5px 64px 17px 10px;
+  margin-left: -20px;
+}
+.surat-header-bap-text-bold {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+.surat-header-bap-text-bold-right {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 49.5px 64px 49px 65px;
+  margin-left: -20px;
+}
+
+.nomor-bap {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.surat-header-bap {
+  display: flex;
+  gap: 20px;
+}
+
+.header-table-bap {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.pekerjaan-bap {
+  display: flex;
+  gap: 0px;
+}
+
+.pekerjaan-title {
+  border: 1px solid #000;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 19px;
+  padding: 27px 10px 20px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pekerjaan-value {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  width: 450px;
+  padding: 20px 37.8px 20px 37.8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lokasi-bap {
+  display: flex;
+  gap: 0px;
+}
+
+.lokasi-bap-tittle {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 19px;
+  padding: 27px 10px 20px 10px;
+  width: 116px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lokasi-bap-value {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 450px;
+  padding: 27px 37.8px 20px 37.8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container utama surat */
+.bast-uangmuka-container {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #000;
+  text-align: justify;
+  margin: auto;
+  font-weight: lighter;
+}
+
+/* Bagian per section */
+.bast-uangmuka-section {
+  margin-bottom: 30px;
+}
+
+/* Judul utama */
+.bast-uangmuka-title {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Paragraf biasa */
+.bast-uangmuka-paragraph {
+  margin-bottom: 10px;
+}
+
+/* List yang memiliki poin */
+.bast-uangmuka-list {
+  margin-left: 30px;
+}
+
+/* Setiap item dalam list */
+.bast-uangmuka-item {
+  margin-bottom: 5px;
+}
+
+/* Styling untuk teks sebelum titik dua */
+.bast-uangmuka-item b {
+  display: inline-block;
+  width: 200px; /* Menyesuaikan agar sejajar */
+  font-weight: lighter;
+}
+
+/* Format khusus untuk jumlah uang */
+.bast-uangmuka-amount {
+  font-weight: lighter;
+  text-decoration: underline;
+}

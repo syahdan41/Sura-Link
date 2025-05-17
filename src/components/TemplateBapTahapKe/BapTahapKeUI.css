@@ -1,0 +1,298 @@
+.a4-container-ui {
+  width: 16cm; /* Lebar A4 dalam 96 DPI */
+  height: 29cm; /* Tinggi A4 dalam 96 DPI */
+  background: white;
+  margin: auto;
+  padding: 48px 48px 46px 48px; /* top right bottom left */
+}
+
+.preview-layout-ui {
+  margin: 78px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar-ui {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.surat-header-bap-tahap-text-bold-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+}
+.header-table-bap-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.surat-header-bap-tahap-text-bold-right-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+}
+
+.surat-header-bap-ui {
+  gap: 20px;
+}
+
+.table-container-bap-tahap-ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.custom-table-bap-tahap-ui {
+  width: 600px;
+  border-collapse: collapse;
+}
+
+.custom-table-bap-tahap-ui td {
+  border: 2px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+
+.custom-table-bap-tahap-ui tr:nth-child(even) {
+  background-color: #ffff;
+}
+.row-table-bap-tahap-ui {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 0;
+}
+
+.label-table-bap-tahap-ui {
+  font-weight: bold;
+  min-width: 100px; /* Supaya label sejajar */
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  color: #000;
+  margin-top: 4px;
+}
+.separator-table-bap-tahap-ui {
+  color: #000;
+  margin-left: -20px;
+}
+
+.value-table-bap-tahap-ui {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 4px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  color: #000;
+  font-weight: lighter;
+}
+.bap-header-container-tahap-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 25px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+
+  padding: 16px 64px 35px 10px;
+}
+
+.label-bap-tahap-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+.separator-bap-tahap-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 10px;
+}
+.value-bap-tahap-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: lighter;
+}
+.first-paragraph-bap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 30px;
+  max-width: 570px;
+}
+.bap-termin-wrapper-ui {
+  margin-top: 30px;
+}
+.bap-termin-container-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Jarak antar baris */
+  max-width: 600px; /* Bisa disesuaikan sesuai kebutuhan */
+  margin-top: 20px;
+}
+
+.bap-termin-item-ui {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+}
+.berdasarkan-text-underline-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-left: 25px;
+}
+
+.berdasarkan-text-underline-2-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.termin-detail-tahap-wrapper-ui {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+.bap-termin-detail-tahap-ui {
+  display: flex;
+  align-items: flex-start;
+  gap: 0px; /* Jarak antara angka dan teks */
+  max-width: 800px; /* Sesuaikan dengan lebar halaman */
+  margin-top: -10px;
+}
+
+.bap-termin-number-ui {
+  font-weight: bold;
+  min-width: 20px; /* Lebar tetap agar angka sejajar */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.bap-termin-text-ui {
+  flex: 1;
+  text-align: justify;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 0px;
+}
+
+.bap-termin-highlight-ui {
+  font-weight: bold;
+}
+
+.bap-label-ui {
+  min-width: 100px; /* Sesuaikan agar label sejajar */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.bap-separator-ui {
+  margin: 0 5px; /* Jarak antara ":" dan value */
+}
+
+.bap-value-ui {
+  flex: 1; /* Biar teks di sisi kanan tidak kepotong */
+}
+
+.identity-ui {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Jika ingin teks di tengah */
+  margin-left: 530px;
+  margin-top: 75px;
+}
+
+.ttd-bap-layout-ui {
+  display: flex;
+  gap: 200px;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+.ttd-pihak-kedua-tahap-ui {
+  white-space: pre-line;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+}
+.ttd-pihak-kedua-bold-ui {
+  font-weight: bold;
+}
+
+.ttd-pihak-kedua-light-ui {
+  font-weight: lighter;
+}
+
+.nip-bap-layout-ui {
+  margin-top: 100px;
+}
+.nip-bap-name-tahap-ui {
+  white-space: pre-line;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+}
+.nip-bap-nip-tahap-ui {
+  white-space: pre-line;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 0px;
+}
+.last-paragraph-bap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: justify;
+  margin-top: 10px;
+  margin-left: 30px;
+  max-width: 530px;
+}

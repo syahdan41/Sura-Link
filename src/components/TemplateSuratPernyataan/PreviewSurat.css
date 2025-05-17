@@ -1,0 +1,148 @@
+.surat-header {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header img {
+  width: 15%;
+  height: 15%;
+  margin-left: 20px;
+}
+
+.surat-header-text-bold {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 19px;
+  margin-left: 10px;
+  margin-bottom: 60px;
+}
+.surat-header-text-light {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 10px;
+}
+.separator-black {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat {
+  color: #000;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.text-var-tanggal {
+  margin-top: 25px;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.pihak1-container {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 75px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 35px;
+  margin-top: 25px;
+}
+
+.label {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.separator {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 65px;
+}
+.value {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.isi-surat {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: justify;
+  margin-top: 25px;
+}
+
+.ketentuan-sanksi {
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 35px;
+  margin-top: 25px;
+  text-indent: -20px; /* Mengatur teks agar tetap sejajar dengan angka */
+  padding-left: 20px; /* Mendorong teks ke kanan agar tidak lebih kiri dari angka */
+  text-align: justify;
+}
+
+.surat-ttd-pernyataan {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 500px;
+  margin-top: 25px;
+}
+
+.identity-surat-pernyataan {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Jika ingin teks di tengah */
+  margin-left: 500px;
+  margin-top: 95px;
+}
+
+.name-surat-pernyataan {
+  text-decoration: underline;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.nip-surat-pernyataan {
+  margin-top: 3px; /* Mengurangi jarak agar lebih rapat */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}

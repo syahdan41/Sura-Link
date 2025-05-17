@@ -1,0 +1,258 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar-ui {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 0px;
+}
+
+.a4-container-ui {
+  width: 15cm; /* Lebar A4 dalam cm */
+  height: 33.7cm; /* Tinggi A4 dalam cm */
+  border: 1px solid black; /* Tambahkan border biar terlihat */
+  background: white;
+  margin: auto;
+  padding: 40px 68px 66px 68px; /* top right bottom left */
+}
+
+.surat-header-ui {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header-ui img {
+  width: 15%;
+  height: 15%;
+}
+
+.surat-header-text-bold-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+.surat-header-text-light-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 12px;
+  margin-left: 35px;
+  margin-top: -30px;
+}
+.separator-black-ui {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat-ringkasan-kontrak-ui {
+  color: #000;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.tittle-nomor-ringkasan-kontrak-ui {
+  color: #000;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+.spmk-nomor-paket-layout-ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 5px;
+}
+
+.spmk-justify-text-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.spmk-justify-text-ui-2 {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.spmk-text-container-ui {
+  text-align: left;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+.spk-container-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.spmk-intro-ui {
+  margin-bottom: 12px;
+}
+
+.spmk-item-ui {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.suratkontrak-label-ui {
+  flex: 0 0 220px; /* Menyesuaikan lebar label agar rata */
+  font-weight: lighter;
+}
+
+.spmk-separator-ui {
+  margin-right: 8px;
+}
+
+.spmk-value-ui {
+  flex: 1;
+  text-align: justify;
+}
+
+.spk-dasar-hukum-container-ui {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+  /* margin-bottom: 130px; */
+}
+
+.spk-dasar-hukum-item-ui {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.spk-dasar-hukum-label-ui {
+  min-width: 20px;
+  font-weight: bold;
+}
+
+.spk-dasar-hukum-value-ui {
+  text-align: justify;
+}
+
+.spk-dasar-hukum-subitems-ui {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  gap: 4px;
+}
+
+.spk-dasar-hukum-subitem-ui {
+  display: flex;
+  gap: 6px;
+}
+
+.spk-dasar-hukum-note-ui {
+  font-style: italic;
+}
+
+.tittle-perpage-ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: #000;
+  margin-top: 190px;
+}
+.tittle-onpage-ui {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: #000;
+}
+
+.tittle-onpage-ui p {
+  margin-bottom: -10px;
+}
+.ttd-spk-main-ui {
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  justify-content: center;
+  align-items: center;
+}
+.ttd-spk-layout-ui {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 80px;
+  text-align: center;
+}
+.ttd-spk-text-container-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+}
+
+.sec-page-content-ui {
+  margin-top: 90px;
+}

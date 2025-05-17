@@ -1,0 +1,413 @@
+.a4-container-ui-bapserahterima {
+  width: 16cm; /* Lebar A4 dalam 96 DPI */
+  height: 35cm; /* Tinggi A4 dalam 96 DPI */
+  background: white;
+  margin: auto;
+  padding: 48px 48px 46px 48px; /* top right bottom left */
+  border: 1px solid #000;
+}
+
+.preview-layout-ui {
+  margin: 78px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar-ui {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.surat-header-bap-tahap-text-bold-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+
+  padding-left: -20px;
+  line-height: 1.1;
+}
+.header-table-bap-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.surat-header-bap-tahap-text-bold-right-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+
+  padding: 10px 10px 6px 10px;
+}
+
+.surat-header-bap-ui {
+  display: flex;
+  gap: 20px;
+}
+
+.pekerjaan-bap-tahap-ui {
+  display: flex;
+  gap: 0px;
+}
+
+.pekerjaan-title-tahap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pekerjaan-value-tahap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: left;
+
+  padding: 5px 37.8px 10px 0px;
+  text-indent: -8px; /* Mengatur teks agar tetap sejajar dengan angka */
+  padding-left: 20px; /* Mendorong teks ke kanan agar tidak lebih kiri dari angka */
+}
+
+.lokasi-bap-tahap-ui {
+  display: flex;
+  gap: 0px;
+}
+
+.lokasi-bap-tittle-tahap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 13px 10px 10px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lokasi-bap-value-tahap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: left;
+
+  padding: 13px 37.8px 20px 0px;
+  text-indent: -8px; /* Mengatur teks agar tetap sejajar dengan angka */
+}
+.bap-header-container-tahap-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 25px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+
+  padding: 16px 64px 35px 10px;
+  margin-left: -20px;
+}
+
+.label-bap-tahap-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+.separator-bap-tahap-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 10px;
+}
+.value-bap-tahap-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: lighter;
+}
+.first-paragraph-bap-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+  margin-top: 30px;
+}
+.bap-termin-wrapper-ui {
+  margin-top: 20px;
+}
+.bap-termin-container-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Jarak antar baris */
+  max-width: 600px; /* Bisa disesuaikan sesuai kebutuhan */
+  margin-top: 20px;
+}
+
+.bap-termin-item-ui {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+  align-items: baseline;
+}
+
+.bap-label-ui {
+  min-width: 100px; /* Sesuaikan agar label sejajar */
+
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.bap-separator-ui {
+  margin: 0 5px; /* Jarak antara ":" dan value */
+}
+
+.bap-value-ui {
+  flex: 1; /* Biar teks di sisi kanan tidak kepotong */
+}
+
+.bap-pihak-pertama-ui {
+  margin-top: 10px;
+  font-style: italic;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.terbilang-bap-wrapper-ui {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.terbilang-bap-var-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.terbilang-bap-value-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+/* Container utama */
+.bast-serah-terima-container-ui {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #000;
+  text-align: justify;
+}
+
+/* Bagian section */
+.bast-serah-terima-section-ui {
+  margin-bottom: 20px;
+}
+
+/* Judul utama */
+.bast-serah-terima-title-ui {
+  font-weight: lighter;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Paragraf utama */
+.bast-serah-terima-paragraph-ui {
+  margin-bottom: 10px;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+/* Setiap item dalam daftar */
+.bast-serah-terima-item-ui {
+  display: flex;
+  margin-bottom: 5px;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+/* Label di sebelah kiri */
+.bast-serah-terima-label-ui {
+  max-width: 200px; /* Menyesuaikan agar sejajar */
+  font-weight: lighter;
+  font-size: 16px;
+}
+.bast-serah-terima-label-terbilang-ui {
+  width: 10px; /* Menyesuaikan agar sejajar */
+  margin-left: 20px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+}
+.bast-serah-terima-label-hasil-pekerjaan-ui {
+  width: 20px; /* Menyesuaikan agar sejajar */
+  font-weight: lighter;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.ttd-bap-layout-serahterima-ui {
+  display: flex;
+  gap: 160px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.ttd-pihak-kesatu-tahap-serahterima-ui {
+  white-space: pre-line;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  max-width: 300px;
+}
+.ttd-pihak-kesatu-bold-serahterima-ui {
+  font-weight: bold;
+}
+
+.ttd-pihak-kesatu-light-serahterima-ui {
+  font-weight: lighter;
+}
+
+.ttd-pihak-kedua-tahap-serahterima-ui {
+  white-space: pre-line;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+}
+.ttd-pihak-kedua-bold-serahterima-ui {
+  font-weight: bold;
+}
+
+.ttd-pihak-kedua-light-serahterima-ui {
+  font-weight: lighter;
+  max-width: 150px;
+}
+
+.nip-bap-layout-pihak1-ui {
+  margin-top: 65px;
+}
+.nip-bap-layout-pihak2-ui {
+  margin-top: 65px;
+}
+.nip-bap-name-tahap-serahterima-ui {
+  white-space: pre-line;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+}
+.nip-bap-nip-tahap-serahterima-ui {
+  white-space: pre-line;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 0px;
+}
+.last-paragraph-bap-serahterima-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.lampiran-header-tittle-layout-ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lampiran-header-tittle-text-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 19px;
+  max-width: 500px;
+}
+
+.lampiran-separator-bar-ui {
+  border-top: 3px solid #000;
+  width: 500px;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.table-container-ui {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.table-bast-serah-terima-ui {
+  border-collapse: collapse;
+  width: 90%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.table-bast-serah-terima-ui th {
+  border: 2px solid black;
+  padding: 10px;
+}
+.table-bast-serah-terima-ui td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-bast-serah-terima-ui th {
+  background-color: #ffff;
+}
+
+.ttd-bap-layout-lampiran-ui {
+  display: flex;
+  gap: 130px;
+  margin-top: 120px;
+  margin-left: 50px;
+}

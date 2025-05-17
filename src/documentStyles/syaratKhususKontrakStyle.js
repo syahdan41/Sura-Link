@@ -1,0 +1,190 @@
+const syaratKhususKontrakStyle = `
+<style>
+
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container {
+  width: 21cm; /* Lebar A4 dalam cm */
+  height: 29.7cm; /* Tinggi A4 dalam cm */
+  background: white;
+  margin: auto;
+  padding: 68px 68px 66px 68px; /* top right bottom left */
+}
+
+.skk-page-tittle {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 19px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.border-separator-black-skk {
+  border-top: 1px solid #000;
+  width: 790px;
+  margin-top: 10px;
+}
+.skk-page-subtittle {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 19px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.skk-table-container {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.skk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+}
+
+.skk-table th {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}
+.skk-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+.skk-table th {
+  background-color: #ffff;
+  font-weight: bold;
+}
+
+.sskk-alamat-container {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: lighter;
+}
+
+.sskk-section {
+  line-height: 1.5;
+}
+
+.sskk-row {
+  display: grid;
+  grid-template-columns: 150px 10px auto; /* Lebar label tetap, separator kecil, dan value fleksibel */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.sskk-label {
+  text-align: left;
+}
+
+.sskk-separator {
+  text-align: center;
+}
+
+.sskk-value {
+  text-align: left;
+}
+
+.regular-text-value {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+
+  font-weight: lighter;
+}
+
+.regular-text-perpoint {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.sskk-inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: lighter;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sskk-inner-table th,
+.sskk-inner-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+.sskk-inner-table th {
+  background-color: #ffff;
+  font-weight: lighter;
+}
+
+.rumusan-text-sskk {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  gap: 5px;
+}
+.rumusan-text-sskk img {
+  height: 150px;
+  width: 350px;
+}
+
+.rumusan-text-sskk-sub-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  gap: 5px;
+}
+
+.text-bold-skk {
+  font-family: "Times New Roman", serif;
+  color: #000;
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+
+</style>
+`;
+
+export default syaratKhususKontrakStyle;

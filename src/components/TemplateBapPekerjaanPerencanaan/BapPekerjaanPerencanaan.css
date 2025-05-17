@@ -1,0 +1,232 @@
+.table-container-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-table-header {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table-header td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.surat-header-bap-perencanaan-text-bold {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.surat-header-bap-perencanaan-text-bold-right {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 38.5px 4px 38px 5px;
+}
+
+.nomor-bap {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header-table-bap {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.pekerjaan-bap-perencanaan {
+  display: flex;
+  gap: 0px;
+}
+
+.pekerjaan-title-bap-perencanaan {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.pekerjaan-bap-perencanaan-value {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+  flex: 1;
+  font-weight: lighter;
+}
+
+.bap-perencanaan-header-container {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 25px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+
+  padding: 32px 20px 28px 23px;
+  margin-left: -21px;
+}
+.bap-termin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Jarak antar baris */
+  max-width: 600px; /* Bisa disesuaikan sesuai kebutuhan */
+  margin-top: 20px;
+}
+.bap-termin-item {
+  display: flex;
+  align-items: baseline;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  text-align: justify;
+}
+.bap-number {
+  min-width: 25px; /* Supaya angka rata kiri */
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.label-bap {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+.separator-bap {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 10px;
+}
+.value-bap {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  flex: 1;
+}
+
+.paragraf-text-justify {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 20px;
+  text-align: justify;
+}
+.bap-pihak-pertama-perencanaan {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 35px;
+}
+
+.bast-perencanaan-container {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: lighter;
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.bast-perencanaan-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.bast-perencanaan-sub-item {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 173px;
+  margin-bottom: 5px;
+}
+
+.bast-perencanaan-label {
+  min-width: 160px;
+  font-weight: lighter;
+}
+
+.bast-perencanaan-sub-label {
+  min-width: 100px;
+}
+
+.bast-perencanaan-separator {
+  min-width: 15px;
+  text-align: center;
+}
+
+.bast-perencanaan-value {
+  flex: 1;
+  text-align: justify;
+  max-width: 370px;
+}
+
+.bast-perencanaan-value strong {
+  font-weight: bold;
+}
+.ttd-bast-perencanaan-layout {
+  display: flex;
+  gap: 400px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.ttd-bast-perencanaan-ph1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.tertanda-bast-perencanaan {
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 60px;
+}
+
+.tertanda-bast-underline {
+  font-weight: bold;
+  text-decoration: underline;
+}

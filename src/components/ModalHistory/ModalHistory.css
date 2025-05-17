@@ -1,0 +1,43 @@
+.modal-body-history {
+  background-color: #fff;
+  width: 180px;
+  height: 120px;
+  position: absolute; /* atau 'fixed' kalau mau full screen relative */
+  z-index: 9999; /* pastikan ini tinggi biar nongol paling atas */
+  left: 1050px;
+  top: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  z-index: 100px;
+}
+
+.content-modal-history {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 0px;
+}
+
+/* .content-modal-history img {
+  width: 14.134px;
+  height: 15.11px;
+  margin: 20px 0px 0px 20px;
+} */
+
+.content-modal-history p {
+  color: #515151;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.content-modal-history p:hover {
+  color: #1a64b0;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.modal-icon-img {
+  width: 30px !important;
+  height: 30px !important;
+  margin: 20px 0px 0px 20px;
+}

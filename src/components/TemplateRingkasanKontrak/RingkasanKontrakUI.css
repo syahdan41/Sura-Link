@@ -1,0 +1,157 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.a4-container-ui {
+  width: 15cm; /* Lebar A4 dalam cm */
+  height: 29.7cm; /* Tinggi A4 dalam cm */
+  border: 1px solid black; /* Tambahkan border biar terlihat */
+  background: white;
+  margin: auto;
+  padding: 40px 68px 66px 68px; /* top right bottom left */
+}
+
+.surat-header-ui {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header-ui img {
+  width: 15%;
+  height: 15%;
+}
+
+.surat-header-text-bold-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+.surat-header-text-light-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 12px;
+  margin-left: 35px;
+  margin-top: -30px;
+}
+.separator-black-ui {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat-ringkasan-kontrak-ui {
+  color: #000;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.tittle-nomor-ringkasan-kontrak-ui {
+  color: #000;
+  font-size: 12px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  margin-top: 0px;
+}
+
+.ringkasan-container-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 90px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 5px;
+  text-align: left;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-weight: lighter;
+  align-items: start;
+  margin-top: 25px;
+}
+
+.label-ringkasan-ui {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 15px;
+  font-weight: lighter;
+  min-width: 250px;
+}
+.separator-ringkasan-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 12px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 78px;
+}
+.value-ringkasan-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 12px;
+  font-weight: lighter;
+  flex: 1;
+}
+
+.surat-ttd-ringkasan-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 12px;
+  margin-left: 390px;
+  margin-top: 55px;
+}
+
+.identity-ui-ringkasan-kontrak {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Jika ingin teks di tengah */
+  margin-left: 400px;
+  margin-top: 75px;
+}
+
+.name-ui {
+  text-decoration: underline;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.nip-ui {
+  margin-top: 3px; /* Mengurangi jarak agar lebih rapat */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}

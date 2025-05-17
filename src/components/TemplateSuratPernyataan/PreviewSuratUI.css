@@ -1,0 +1,175 @@
+.preview-layout {
+  margin: 96px 20px 0px 20px;
+  /* border: 3px solid red; */
+  width: 10;
+}
+
+.preview-bar-ui {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+  color: #515151;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 0px;
+}
+
+.a4-container-ui {
+  width: 15cm; /* Lebar A4 dalam cm */
+  height: 29.7cm; /* Tinggi A4 dalam cm */
+  border: 1px solid black; /* Tambahkan border biar terlihat */
+  background: white;
+  margin: auto;
+  padding: 40px 68px 66px 68px; /* top right bottom left */
+}
+
+.surat-header-ui {
+  display: flex;
+  gap: 20px;
+}
+
+.surat-header-ui img {
+  width: 16%;
+  height: 16%;
+}
+
+.surat-header-text-bold-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 18px;
+  margin-left: 30px;
+}
+.surat-header-text-light-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 15px;
+  margin-left: 120px;
+  margin-top: -30px;
+}
+.separator-black-ui {
+  border-top: 3px solid black;
+  margin-top: 5px;
+}
+
+.tittle-surat-ui {
+  color: #000;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.text-var-tanggal-ui {
+  margin-top: 25px;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.pihak1-container-ui {
+  display: grid;
+  grid-template-columns: auto minmax(5px, 75px) 1fr; /* Kolom tengah (:) bisa diubah */
+  gap: 0px;
+  text-align: left;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 35px;
+  margin-top: 25px;
+}
+
+.label-ui {
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.separator-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  min-width: 10px;
+  margin-left: 65px;
+}
+.value-ui {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.isi-surat-ui {
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: justify;
+  margin-top: 25px;
+}
+
+.ketentuan-sanksi-ui {
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 35px;
+  margin-top: 25px;
+  text-indent: -20px; /* Mengatur teks agar tetap sejajar dengan angka */
+  padding-left: 20px; /* Mendorong teks ke kanan agar tidak lebih kiri dari angka */
+  text-align: justify;
+}
+
+.surat-ttd-ui {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  font-weight: lighter;
+  white-space: pre-line; /* Memungkinkan enter pada teks */
+  font-size: 16px;
+  margin-left: 350px;
+  margin-top: 25px;
+}
+
+.identity-ui-surat-pernyataan {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Jika ingin teks di tengah */
+  margin-left: 352px;
+  margin-top: 95px;
+}
+
+.name-ui-surat-pernyataan {
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.nip-ui-surat-pernyataan {
+  margin-top: -2px; /* Mengurangi jarak agar lebih rapat */
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
