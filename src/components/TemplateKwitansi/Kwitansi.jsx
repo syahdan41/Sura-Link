@@ -14,7 +14,7 @@ import { parse, format, isValid } from "date-fns";
 
 import Spinner from "../Spinner/spinner";
 
-const Kwitansi = ({ documentId, projectDetailData, onCreated, currFileType }, ref) => {
+const Kwitansi = ({ documentId, projectDetailData, onCreated, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
 
   const [loading, setLoading] = useState(true);
@@ -220,6 +220,25 @@ const Kwitansi = ({ documentId, projectDetailData, onCreated, currFileType }, re
         const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/dynamic/crud/put/kwitansi_tahap?id=${documentId}`, payload, { headers: { "Content-Type": "application/json" } });
 
         console.log("✅ Update success:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "kwitansi_tahap",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Kwitansi",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setIsSuccessModalOpen(true);
       } else {
         // POST (Create)
@@ -237,7 +256,24 @@ const Kwitansi = ({ documentId, projectDetailData, onCreated, currFileType }, re
             onCreated(newId, fetchedData); // kirim id + data ke parent
           }
         }
+        const currentTimestamp = new Date().toISOString();
 
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "kwitansi_tahap",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Kwitansi",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
       }
     } catch (error) {

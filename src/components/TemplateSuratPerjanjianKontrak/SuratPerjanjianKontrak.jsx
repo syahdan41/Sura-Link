@@ -12,7 +12,7 @@ import html2pdf from "html2pdf.js";
 import htmlDocx from "html-docx-js/dist/html-docx";
 import documentStyleMapping from "../../documentStyles";
 
-const SuratPerjanjianKontrak = ({ projectDetailData, documentId, currFileType }, ref) => {
+const SuratPerjanjianKontrak = ({ projectDetailData, documentId, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isFailedModalOpen, setIsFailedModalOpen] = useState(false);
@@ -441,6 +441,25 @@ const SuratPerjanjianKontrak = ({ projectDetailData, documentId, currFileType },
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_perjanjian_kontrak",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Perjanjian Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         console.log("✅ Surat Perjanjian Kontrak berhasil diupdate:", response.data);
         setIsSuccessModalOpen(true);
@@ -496,6 +515,24 @@ const SuratPerjanjianKontrak = ({ projectDetailData, documentId, currFileType },
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_perjanjian_kontrak",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Perjanjian Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setLoading(false);
         console.log("✅ Surat Perjanjian Kontrak berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);

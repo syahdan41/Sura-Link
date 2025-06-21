@@ -13,7 +13,7 @@ import documentStyleMapping from "../../documentStyles";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const BapPekerjaanPengawasan = ({ documentId, projectDetailData, currFileType }, ref) => {
+const BapPekerjaanPengawasan = ({ documentId, projectDetailData, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isFailedModalOpen, setIsFailedModalOpen] = useState(false);
@@ -206,6 +206,25 @@ const BapPekerjaanPengawasan = ({ documentId, projectDetailData, currFileType },
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_serah_terima_pekerjaan_pengawasan",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Berita Acara Serah Terima Pekerjaan Pengawasan",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         console.log("✅ Ringkasan Kontrak berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);
@@ -236,6 +255,24 @@ const BapPekerjaanPengawasan = ({ documentId, projectDetailData, currFileType },
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_serah_terima_pekerjaan_pengawasan",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Berita Acara Serah Terima Pekerjaan Pengawasan",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setLoading(false);
         console.log("✅ BAP Pekerjaan Perencanann berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);

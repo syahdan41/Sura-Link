@@ -13,7 +13,7 @@ import Spinner from "../Spinner/spinner";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const BapTerminKe = ({ documentId, prevDocumentId = [], suffix, projectDetailData, onCreated, currFileType }, ref) => {
+const BapTerminKe = ({ documentId, prevDocumentId = [], suffix, projectDetailData, onCreated, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
 
   const [loading, setLoading] = useState(false);
@@ -386,6 +386,25 @@ const BapTerminKe = ({ documentId, prevDocumentId = [], suffix, projectDetailDat
         );
 
         console.log("✅ BAP Termin berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_pembayaran_termin",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: `Pembaharuan Detil Surat Berita Acara Pembayaran Termin Ke - ${suffix}`,
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         setIsSuccessModalOpen(true);
         setIsFailedModalOpen(false);
@@ -433,6 +452,24 @@ const BapTerminKe = ({ documentId, prevDocumentId = [], suffix, projectDetailDat
         console.log("✅ Surat Pernyataan berhasil dibuat:", response.data);
 
         console.log("✅ BAP Termin berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_pembayaran_termin",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Berita Acara Pembayaran Termin",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
         setIsFailedModalOpen(false);
         setLoading(false);

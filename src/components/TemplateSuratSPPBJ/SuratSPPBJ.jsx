@@ -11,7 +11,7 @@ import htmlDocx from "html-docx-js/dist/html-docx";
 import documentStyleMapping from "../../documentStyles";
 import LogoKampusLarge from "../../Assets/Images/image 1.png";
 
-const SuratSPPBJ = ({ documentId, projectDetailData, currFileType }, ref) => {
+const SuratSPPBJ = ({ documentId, projectDetailData, currFileType, projectName }, ref) => {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isFailedModalOpen, setIsFailedModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -173,6 +173,7 @@ const SuratSPPBJ = ({ documentId, projectDetailData, currFileType }, ref) => {
   };
 
   const handleSubmitSppbj = async () => {
+    setLoading(true);
     let newErrors = {};
     let isValid = true;
 
@@ -236,6 +237,25 @@ const SuratSPPBJ = ({ documentId, projectDetailData, currFileType }, ref) => {
         );
 
         console.log("✅ Surat SPPBJ berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_penunjukan_penyedia_barang_jasa",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Penunjukan Barang dan Jasa (SPPBJ)",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+        setLoading(false);
         setIsSuccessModalOpen(true);
       } catch (error) {
         console.error("❌ Gagal membuat Surat SPPBJ:", error);
@@ -263,6 +283,25 @@ const SuratSPPBJ = ({ documentId, projectDetailData, currFileType }, ref) => {
         );
 
         console.log("✅ Surat SPPBJ berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_penunjukan_penyedia_barang_jasa",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Penunjukan Barang dan Jasa (SPPBJ)",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+        setLoading(false);
         setIsSuccessModalOpen(true);
       } catch (error) {
         console.error("❌ Gagal membuat Surat SPPBJ:", error);

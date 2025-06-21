@@ -3,8 +3,10 @@ import "./ModalHistory.css";
 import ModalIcon1 from "../../Assets/Images/modal_icon/modal_icon1.png";
 import axios from "axios";
 import ModalIcon4 from "../../Assets/Images/modal_icon/modal_icon4.png";
+import { useNavigate } from "react-router-dom";
 
 const ModalHistory = ({ isOpen, onClose, projectId, onDeleted }) => {
+  const navigate = useNavigate();
   const modalRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,12 +36,16 @@ const ModalHistory = ({ isOpen, onClose, projectId, onDeleted }) => {
     }
   };
 
+  const handleOpenProject = () => {
+    navigate("/Project", { state: { projectId: projectId } });
+  };
+
   if (!isOpen) return null;
 
   return (
     <>
       <div className="modal-body-history" ref={modalRef}>
-        <div className="content-modal-history">
+        <div className="content-modal-history" onClick={handleOpenProject}>
           <img src={ModalIcon1} alt="open-file" className="modal-icon-img" />
           <p>Buka History</p>
         </div>

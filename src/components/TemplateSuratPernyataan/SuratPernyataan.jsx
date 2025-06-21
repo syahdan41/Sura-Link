@@ -16,7 +16,7 @@ import "./PreviewSurat.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileType }, ref) => {
+const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
 
   const [loading, setLoading] = useState(true);
@@ -290,13 +290,13 @@ const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileTyp
         const responseHistory = await axios.post(
           `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
           {
-            table_name: "projects",
+            table_name: "surat_pernyataan",
             record_id: 1,
-            action_type: "CREATE",
+            action_type: "UPDATE",
             timestamp: currentTimestamp,
             project_id: projectDetailData.id,
-            project_name: "" || "",
-            description: "Create project details",
+            project_name: projectName || "",
+            description: "Update Surat Pernyataan",
           },
           {
             headers: { "Content-Type": "application/json" },
@@ -339,6 +339,26 @@ const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileTyp
         console.log("✅ Create success:", postResponse.data);
 
         console.log("✅ Surat Pernyataan berhasil dibuat:", postResponse.data);
+
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_pernyataan",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: postResponse.data.id,
+            project_name: projectName || "",
+            description: "Create Surat Pernyataan",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        console.log("✅ Berhasil:", responseHistory.data);
 
         setIsSuccessModalOpen(true);
         setLoading(false);

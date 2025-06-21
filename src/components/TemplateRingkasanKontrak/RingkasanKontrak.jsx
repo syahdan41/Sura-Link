@@ -14,7 +14,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const RingkasanKontrak = ({ documentId, projectDetailData, onCreated, currFileType }, ref) => {
+const RingkasanKontrak = ({ documentId, projectDetailData, onCreated, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -255,6 +255,25 @@ const RingkasanKontrak = ({ documentId, projectDetailData, onCreated, currFileTy
         );
 
         console.log("✅ Ringkasan Kontrak berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "ringkasan_kontrak",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Ringkasan Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         setIsSuccessModalOpen(true);
       } catch (error) {
@@ -291,6 +310,25 @@ const RingkasanKontrak = ({ documentId, projectDetailData, onCreated, currFileTy
         if (onCreated && newId) onCreated(newId); // Kirim ke parent
         console.log("✅ Create success:", response.data);
         console.log("✅ Ringkasan Kontrak berhasil dibuat:", response.data);
+
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "ringkasan_kontrak",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Ringkasan Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
 
         setLoading(false);
         setIsSuccessModalOpen(true);

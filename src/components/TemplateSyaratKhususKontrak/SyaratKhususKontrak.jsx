@@ -13,7 +13,7 @@ import htmlDocx from "html-docx-js/dist/html-docx";
 import documentStyleMapping from "../../documentStyles";
 import "./SyaratKhususKontrak.css";
 
-const SyaratKhususKontrak = ({ documentId, projectDetailData, currFileType }, ref) => {
+const SyaratKhususKontrak = ({ documentId, projectDetailData, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   // const [uploadedImages, setUploadedImages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -915,6 +915,25 @@ const SyaratKhususKontrak = ({ documentId, projectDetailData, currFileType }, re
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "syarat_syarat_khusus_kontrak",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Syarat-Syarat Khusus Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         console.log("✅ Syarat Khusus Kontrak Berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);
@@ -999,6 +1018,24 @@ const SyaratKhususKontrak = ({ documentId, projectDetailData, currFileType }, re
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "syarat_syarat_khusus_kontrak",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Syarat-Syarat Khusus Kontrak",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setLoading(false);
         console.log("✅ Syarat Khusus Kontrak Berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);

@@ -15,7 +15,7 @@ import documentStyleMapping from "../../documentStyles";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const BapSerahTerimaTahapKe = ({ projectDetailData, documentId, currFileType }, ref) => {
+const BapSerahTerimaTahapKe = ({ projectDetailData, documentId, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -295,6 +295,25 @@ const BapSerahTerimaTahapKe = ({ projectDetailData, documentId, currFileType }, 
 
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_serah_terima_tahap",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: `Pembaharuan Detil Surat Berita Acara Serah Terima Tahap Ke ${formData.tahap_ke}`,
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
+
         setLoading(false);
         console.log("✅ BAP Pemeriksaan tahap berhasil dibuat:", response.data);
         setIsSuccessModalOpen(true);
@@ -330,6 +349,24 @@ const BapSerahTerimaTahapKe = ({ projectDetailData, documentId, currFileType }, 
           },
           { headers: { "Content-Type": "application/json" } }
         );
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "berita_acara_serah_terima_tahap",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Berita Acara Serah Terima Tahap",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setLoading(false);
         console.log("✅ BAP Serah terima tahap:", response.data);
         setIsSuccessModalOpen(true);

@@ -515,9 +515,11 @@ const Project = () => {
     "SURAT PERNYATAAN": (card, ref) => (
       <SuratPernyataan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
-    "RINGKASAN KONTRAK": (card, ref) => <RingkasanKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />,
+    "RINGKASAN KONTRAK": (card, ref) => (
+      <RingkasanKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
+    ),
     "SURAT PENUNJUKAN PENYEDIA BARANG/JASA (SPPBJ)": (card, ref) => (
-      <SuratSPPBJ ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <SuratSPPBJ ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
     "BERITA ACARA PEMBAYARAN TERMIN": (card, ref) => (
       <BapTerminKe
@@ -528,36 +530,83 @@ const Project = () => {
         projectDetailData={projectDetail}
         onCreated={handleUpdateDocumentId}
         currFileType={currentFileType}
+        projectName={projectNameInputParam}
       />
     ),
     "BERITA ACARA PEMBAYARAN TAHAP": (card, ref) => (
-      <BapTahapKe ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <BapTahapKe ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
-    "KWITANSI TAHAP": (card, ref) => <Kwitansi ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />,
-    "KWITANSI TERMIN": (card, ref) => <KwitansiTermin ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />,
+    "KWITANSI TAHAP": (card, ref) => (
+      <Kwitansi ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
+    ),
+    "KWITANSI TERMIN": (card, ref) => (
+      <KwitansiTermin ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
+    ),
     "SURAT PERINTAH MULAI KERJA (SPMK)": (card, ref) => (
-      <SuratSPMK ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <SuratSPMK ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
     "SURAT PERJANJIAN/KONTRAK": (card, ref) => (
-      <SuratPerjanjianKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <SuratPerjanjianKontrak
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        projectDetailData={projectDetail}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectName={projectNameInputParam}
+      />
     ),
     "BERITA ACARA SERAH TERIMA UANG MUKA": (card, ref) => (
-      <BapUangMuka ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <BapUangMuka ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
     "BERITA ACARA SERAH TERIMA TAHAP": (card, ref) => (
-      <BapSerahTerimaTahapKe ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectDetailData={projectDetail} />
+      <BapSerahTerimaTahapKe
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectDetailData={projectDetail}
+        projectName={projectNameInputParam}
+      />
     ),
     "BERITA ACARA PEMERIKSAAN TAHAP": (card, ref) => (
-      <BapPemeriksaanTahap ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <BapPemeriksaanTahap
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        projectDetailData={projectDetail}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectName={projectNameInputParam}
+      />
     ),
     "BERITA ACARA SERAH TERIMA PEKERJAAN PERENCANAAN": (card, ref) => (
-      <BapPekerjaanPerencanaan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <BapPekerjaanPerencanaan
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        projectDetailData={projectDetail}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectName={projectNameInputParam}
+      />
     ),
     "BERITA ACARA SERAH TERIMA PEKERJAAN PENGAWASAN": (card, ref) => (
-      <BapPekerjaanPengawasan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <BapPekerjaanPengawasan
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        projectDetailData={projectDetail}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectName={projectNameInputParam}
+      />
     ),
     "SYARAT-SYARAT KHUSUS KONTRAK (SSKK)": (card, ref) => (
-      <SyaratKhususKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
+      <SyaratKhususKontrak
+        ref={ref}
+        documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id}
+        projectDetailData={projectDetail}
+        onCreated={handleUpdateDocumentId}
+        currFileType={currentFileType}
+        projectName={projectNameInputParam}
+      />
     ),
     "PROJECT FORM": () => <ProjectForm formDataProjectDetail={formDataProjectDetail} setFormDataProjectDetail={setFormDataProjectDetail} errors={errors} setErrors={setErrors} ProjectName={projectNameInputParam} projectId={projectId} />,
   };

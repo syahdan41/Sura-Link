@@ -13,7 +13,7 @@ import html2pdf from "html2pdf.js";
 import htmlDocx from "html-docx-js/dist/html-docx";
 import documentStyleMapping from "../../documentStyles";
 
-const SuratSPMK = ({ documentId, projectDetailData, onCreated, currFileType }, ref) => {
+const SuratSPMK = ({ documentId, projectDetailData, onCreated, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
   console.log("document id SPMK :", documentId);
   const [loading, setLoading] = useState(false);
@@ -201,11 +201,29 @@ const SuratSPMK = ({ documentId, projectDetailData, onCreated, currFileType }, r
           { headers: { "Content-Type": "application/json" } }
         );
 
-        console.log("✅ Ringkasan Kontrak berhasil dibuat:", response.data);
+        console.log("✅ SPMK berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_perintah_mulai_kerja",
+            record_id: 1,
+            action_type: "UPDATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: projectName || "",
+            description: "Pembaharuan Detil Surat Perintah Mulai Kerja (SPMK)",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
 
         setIsSuccessModalOpen(true);
       } catch (error) {
-        console.error("❌ Gagal membuat Ringkasan Kontrak:", error);
+        console.error("❌ Gagal membuat Surat SPMK:", error);
         console.log("📦 Detail error dari API:", error.response?.data);
 
         setIsFailedModalOpen(true);
@@ -232,6 +250,24 @@ const SuratSPMK = ({ documentId, projectDetailData, onCreated, currFileType }, r
         );
 
         console.log("✅ Ringkasan Kontrak berhasil dibuat:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "surat_perintah_mulai_kerja",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: projectName || "",
+            description: "Pembuatan Surat Perintah Mulai Kerja (SPMK)",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
         const newId = response.data?.id;
         if (onCreated && newId) onCreated(newId); // Kirim ke parent
