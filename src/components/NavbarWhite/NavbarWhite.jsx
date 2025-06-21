@@ -9,8 +9,8 @@ const NavbarWhite = ({ isForm, onDownloadClick, documentName }) => {
   return (
     <header className="header-white">
       <div className="header-content-white">
-        <img src={LogoKampus} alt="logo-kampus" />
-        <p>Universitas Bengkulu</p>
+        <img src={LogoKampus} alt="logo-kampus" onClick={() => navigate("/")} />
+        <p onClick={() => navigate("/")}>Universitas Bengkulu</p>
 
         {isForm ? (
           <div className="button-layout-upper">

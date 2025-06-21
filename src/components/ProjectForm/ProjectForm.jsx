@@ -115,8 +115,7 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
     return Object.keys(newErrors).length === 0;
   };
   const formatDateToYMD = (date) => {
-    if (!date || isNaN(new Date(date))) return null; // bisa juga return "" tergantung backend
-    const d = new Date(date);
+    const d = date && !isNaN(new Date(date)) ? new Date(date) : new Date(); // pakai tanggal sekarang kalau tidak valid
     const year = d.getFullYear();
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const day = String(d.getDate()).padStart(2, "0");
@@ -142,13 +141,13 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
             project_name: ProjectName || null,
 
             nomor_berita_acara_pemeriksaan_pekerjaan: formDataProjectDetail.nomor_berita_acara_pemeriksaan_pekerjaan || null,
-            tanggal_berita_acara_pemeriksaan_pekerjaan: formatDateToYMD(formDataProjectDetail.tanggal_berita_acara_pemeriksaan_pekerjaan) || null, // Format YYYY-MM-DD
+            tanggal_berita_acara_pemeriksaan_pekerjaan: formatDateToYMD(formDataProjectDetail.tanggal_berita_acara_pemeriksaan_pekerjaan), // Format YYYY-MM-DD
             tanggal_berita_acara_pemeriksaan_pekerjaan_huruf: formDataProjectDetail.tanggal_bap_pekerjaan_terbilang || null,
             nomor_surat_penunjukan_penyedia_barang_jasa_sppbj: formDataProjectDetail.nomorSuratSPPBJ || null,
-            tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj: formatDateToYMD(formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ) || null, // Format YYYY-MM-DD
+            tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj: formatDateToYMD(formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ), // Format YYYY-MM-DD
             tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj_huruf: formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ_terbilang || null,
             nomor_surat_perjanjian_kontrak: formDataProjectDetail.nomor_surat_perjanjian_kontrak || null,
-            tanggal_surat_perjanjian_kontrak: formatDateToYMD(formDataProjectDetail.tanggal_surat_perjanjian_kontrak) || null, // Format YYYY-MM-DD
+            tanggal_surat_perjanjian_kontrak: formatDateToYMD(formDataProjectDetail.tanggal_surat_perjanjian_kontrak), // Format YYYY-MM-DD
 
             nama_pihak_1: formDataProjectDetail.nama_pihak_1 || null,
             nip_pihak_1: formDataProjectDetail.nip_pihak_1 || null,
@@ -170,7 +169,7 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
             nip_pihak_2: formDataProjectDetail.nip_pihak_2 || null,
             deskripsi_ttd_pihak_2: formDataProjectDetail.desc_ttd_pihak_2 || null,
             nomor_akta_notaris_pihak_2: formDataProjectDetail.nomor_akta_notaris_pihak_2 || null,
-            tanggal_nomor_akta_notaris_pihak_2: formatDateToYMD(formDataProjectDetail.tanggal_nomor_akta_notaris) || null, // Format YYYY-MM-DD
+            tanggal_nomor_akta_notaris_pihak_2: formatDateToYMD(formDataProjectDetail.tanggal_nomor_akta_notaris), // Format YYYY-MM-DD
             nomor_kontak_pihak_2: formDataProjectDetail.nomor_kontak_pihak_2 || null,
             lokasi_pekerjaan: formDataProjectDetail.lokasi_pekerjaan || null,
             pekerjaan: formDataProjectDetail.pekerjaan || null,
@@ -187,7 +186,26 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
         );
 
         console.log("✅ Berhasil:", response.data);
-        console.log("Payload yang dikirim:", { tanggal_surat_bap: formatDateToYMD(formDataProjectDetail.tanggalSuratBAP) });
+        // console.log("Payload yang dikirim:", { tanggal_surat_bap: formatDateToYMD(formDataProjectDetail.tanggalSuratBAP) });
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "projects",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: ProjectName || "",
+            description: "Create project details",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
       } catch (error) {
         console.error("❌ Gagal:", error);
@@ -204,10 +222,10 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
             project_name: ProjectName || null,
 
             nomor_berita_acara_pemeriksaan_pekerjaan: formDataProjectDetail.nomor_berita_acara_pemeriksaan_pekerjaan || null,
-            tanggal_berita_acara_pemeriksaan_pekerjaan: formatDateToYMD(formDataProjectDetail.tanggal_berita_acara_pemeriksaan_pekerjaan) || null, // Format YYYY-MM-DD
+            tanggal_berita_acara_pemeriksaan_pekerjaan: formatDateToYMD(formDataProjectDetail.tanggal_berita_acara_pemeriksaan_pekerjaan), // Format YYYY-MM-DD
             tanggal_berita_acara_pemeriksaan_pekerjaan_huruf: formDataProjectDetail.tanggal_bap_pekerjaan_terbilang || null,
             nomor_surat_penunjukan_penyedia_barang_jasa_sppbj: formDataProjectDetail.nomorSuratSPPBJ || null,
-            tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj: formatDateToYMD(formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ) || null, // Format YYYY-MM-DD
+            tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj: formatDateToYMD(formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ), // Format YYYY-MM-DD
             tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj_huruf: formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ_terbilang || null,
             nomor_surat_perjanjian_kontrak: formDataProjectDetail.nomor_surat_perjanjian_kontrak || null,
             tanggal_surat_perjanjian_kontrak: formatDateToYMD(formDataProjectDetail.tanggal_surat_perjanjian_kontrak) || null, // Format YYYY-MM-DD
@@ -232,7 +250,7 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
             nip_pihak_2: formDataProjectDetail.nip_pihak_2 || null,
             deskripsi_ttd_pihak_2: formDataProjectDetail.desc_ttd_pihak_2 || null,
             nomor_akta_notaris_pihak_2: formDataProjectDetail.nomor_akta_notaris_pihak_2 || null,
-            tanggal_nomor_akta_notaris_pihak_2: formatDateToYMD(formDataProjectDetail.tanggal_nomor_akta_notaris) || null, // Format YYYY-MM-DD
+            tanggal_nomor_akta_notaris_pihak_2: formatDateToYMD(formDataProjectDetail.tanggal_nomor_akta_notaris), // Format YYYY-MM-DD
             nomor_kontak_pihak_2: formDataProjectDetail.nomor_kontak_pihak_2 || null,
             lokasi_pekerjaan: formDataProjectDetail.lokasi_pekerjaan || null,
             pekerjaan: formDataProjectDetail.pekerjaan || null,
@@ -249,6 +267,25 @@ const ProjectForm = ({ formDataProjectDetail, setFormDataProjectDetail, errors, 
         );
 
         console.log("✅ Berhasil:", response.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "projects",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: response.data.id,
+            project_name: ProjectName || "",
+            description: "Create project details",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
       } catch (error) {
         console.error("❌ Gagal:", error);

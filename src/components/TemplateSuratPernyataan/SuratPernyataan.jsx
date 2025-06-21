@@ -285,6 +285,25 @@ const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileTyp
         );
 
         console.log("✅ Surat Pernyataan berhasil dibuat:", postResponse.data);
+        const currentTimestamp = new Date().toISOString();
+
+        const responseHistory = await axios.post(
+          `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+          {
+            table_name: "projects",
+            record_id: 1,
+            action_type: "CREATE",
+            timestamp: currentTimestamp,
+            project_id: projectDetailData.id,
+            project_name: "" || "",
+            description: "Create project details",
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        console.log("✅ Berhasil:", responseHistory.data);
         setIsSuccessModalOpen(true);
         setLoading(false);
       } catch (error) {

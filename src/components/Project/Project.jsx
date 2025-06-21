@@ -351,6 +351,25 @@ const Project = () => {
       );
 
       console.log("✅ Berhasil:", response.data);
+      const currentTimestamp = new Date().toISOString();
+
+      const responseHistory = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+        {
+          table_name: "projects",
+          record_id: 1,
+          action_type: "CREATE",
+          timestamp: currentTimestamp,
+          project_id: response.data.id,
+          project_name: projectNameInputParam || "",
+          description: "Create project details",
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      console.log("✅ Berhasil:", responseHistory.data);
       alert("✅ Project berhasil dibuat");
     } catch (error) {
       console.error("❌ Gagal:", error);
@@ -412,6 +431,25 @@ const Project = () => {
       );
 
       console.log("✅ Berhasil Update:", response.data);
+      const currentTimestamp = new Date().toISOString();
+
+      const responseHistory = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
+        {
+          table_name: "projects",
+          record_id: 1,
+          action_type: "CREATE",
+          timestamp: currentTimestamp,
+          project_id: response.data.id,
+          project_name: projectNameInputParam || "",
+          description: "Create project details",
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      console.log("✅ Berhasil:", responseHistory.data);
       alert("✅ Project berhasil dibuat");
     } catch (error) {
       console.error("❌ Gagal Update:", error);
@@ -474,7 +512,9 @@ const Project = () => {
 
   // mapping component untuk modals pop up
   const componentMapping = {
-    "SURAT PERNYATAAN": (card, ref) => <SuratPernyataan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />,
+    "SURAT PERNYATAAN": (card, ref) => (
+      <SuratPernyataan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
+    ),
     "RINGKASAN KONTRAK": (card, ref) => <RingkasanKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />,
     "SURAT PENUNJUKAN PENYEDIA BARANG/JASA (SPPBJ)": (card, ref) => (
       <SuratSPPBJ ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} />
