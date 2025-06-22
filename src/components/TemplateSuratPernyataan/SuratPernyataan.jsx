@@ -16,7 +16,7 @@ import "./PreviewSurat.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileType, projectName }, ref) => {
+const SuratPernyataan = ({ documentId, projectDetailData, currFileType, projectName }, ref) => {
   const contentRef = useRef(null);
 
   const [loading, setLoading] = useState(true);
@@ -324,19 +324,19 @@ const SuratPernyataan = ({ documentId, projectDetailData, onCreated, currFileTyp
             nilai_kontrak_angka: parseInt(formData.nilai_kontrak.raw, 10) || 0,
             nilai_kontrak_huruf: formData.nilai_kontrak_terbilang,
             nomor_surat_keputusan_rektor: formData.nomor_surat_keputusan_rektor,
-            tanggal_surat_keputusan_rektor: formData.tanggal_surat_keputusan_rektor ? format(formData.tanggal_surat_keputusan_rektor, "yyyy-MM-dd") : null,
+            tanggal_surat_keputusan_rektor: formData.tanggal_surat_keputusan_rektor ? format(formData.tanggal_surat_keputusan_rektor, "yyyy-MM-dd") : "",
             // kurang [nominal_pembayaran_angka,int],  [nominal_pembayaran_huruf,text]
             nominal_pembayaran_angka: parseInt(formData.nominal_pembayaran.raw) || 0,
             nominal_pembayaran_huruf: formData.nominal_pembayaran_terbilang,
-            hari_dan_tanggal_surat_pernyataan_huruf: formData.tanggal_surat_pernyataan ? format(formData.tanggal_surat_pernyataan, "yyyy-MM-dd") : null,
+            hari_dan_tanggal_surat_pernyataan_huruf: formData.tanggal_surat_pernyataan ? format(formData.tanggal_surat_pernyataan, "yyyy-MM-dd") : "",
             hari_dan_tanggal_surat_pernyataan_huruf_teks: formData.tanggal_surat_pernyataan_terbilang,
             ketentuan_sanksi: formData.ketentuan_sanksi,
           },
           { headers: { "Content-Type": "application/json" } }
         );
-        const newId = postResponse.data?.id;
-        if (onCreated && newId) onCreated(newId); // Kirim ke parent
-        console.log("✅ Create success:", postResponse.data);
+        // const newId = postResponse.data?.id;
+        // if (onCreated && newId) onCreated(newId); // Kirim ke parent
+        // console.log("✅ Create success:", postResponse.data);
 
         console.log("✅ Surat Pernyataan berhasil dibuat:", postResponse.data);
 

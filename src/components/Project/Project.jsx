@@ -298,86 +298,6 @@ const Project = () => {
     }
   };
 
-  const handleCreateProject = async () => {
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/projects/create`,
-        {
-          project_name: projectNameInputParam || "",
-
-          nomor_berita_acara_pemeriksaan_pekerjaan: formDataProjectDetail.nomor_berita_acara_pemeriksaan_pekerjaan || null,
-          tanggal_berita_acara_pemeriksaan_pekerjaan: formatDateToYMD(formDataProjectDetail.tanggal_berita_acara_pemeriksaan_pekerjaan),
-          tanggal_berita_acara_pemeriksaan_pekerjaan_huruf: formDataProjectDetail.tanggal_bap_pekerjaan_terbilang || null,
-          nomor_surat_penunjukan_penyedia_barang_jasa_sppbj: formDataProjectDetail.nomorSuratSPPBJ || null,
-          tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj: formatDateToYMD(formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ),
-          tanggal_surat_penunjukan_penyedia_barang_jasa_sppbj_huruf: formDataProjectDetail.tanggal_surat_penunjukan_SPPBJ_terbilang || null,
-          nomor_surat_perjanjian_kontrak: formDataProjectDetail.nomor_surat_perjanjian_kontrak || null,
-          tanggal_surat_perjanjian_kontrak: formatDateToYMD(formDataProjectDetail.tanggal_surat_perjanjian_kontrak),
-
-          nama_pihak_1: formDataProjectDetail.nama_pihak_1 || null,
-          nip_pihak_1: formDataProjectDetail.nip_pihak_1 || null,
-          email_pihak_1: formDataProjectDetail.email_pihak_1 || null,
-          pangkat_golongan_ruang_pihak_1: formDataProjectDetail.pangkat_pihak_1 || null,
-          jabatan_pihak_1: formDataProjectDetail.jabatan_pihak_1 || null,
-          perusahaan_pihak_1: formDataProjectDetail.perusahaan_pihak_1 || null,
-          alamat_pihak_1: formDataProjectDetail.alamat_pihak_1 || null,
-          deskripsi_ttd_pihak_1: formDataProjectDetail.desc_ttd_pihak_1 || null,
-          nomor_kontak_pihak_1: formDataProjectDetail.nomor_kontak_pihak_1 || null,
-          nama_pihak_2: formDataProjectDetail.nama_pihak_2 || null,
-          alamat_pihak_2: formDataProjectDetail.alamat_pihak_2 || null,
-          email_pihak_2: formDataProjectDetail.email_pihak_2 || null,
-          perusahaan_pihak_2: formDataProjectDetail.perusahaan_pihak_2 || null,
-          jabatan_pihak_2: formDataProjectDetail.jabatan_pihak_2 || null,
-          nama_bank_pihak_2: formDataProjectDetail.nama_bank_pihak_2 || null,
-          nomor_rekening_pihak_2: formDataProjectDetail.nomor_rekening_pihak_2 || null,
-          npwp_pihak_2: formDataProjectDetail.npwp_pihak_2 || null,
-          nip_pihak_2: formDataProjectDetail.nip_pihak_2 || null,
-          deskripsi_ttd_pihak_2: formDataProjectDetail.desc_ttd_pihak_2 || null,
-          nomor_akta_notaris_pihak_2: formDataProjectDetail.nomor_akta_notaris_pihak_2 || null,
-          tanggal_nomor_akta_notaris_pihak_2: formatDateToYMD(formDataProjectDetail.tanggal_nomor_akta_notaris),
-          nomor_kontak_pihak_2: formDataProjectDetail.nomor_kontak_pihak_2 || null,
-          lokasi_pekerjaan: formDataProjectDetail.lokasi_pekerjaan || null,
-          pekerjaan: formDataProjectDetail.pekerjaan || null,
-          nominal_pembayaran_angka: formDataProjectDetail.nominal_pembayaran?.raw || null,
-          nominal_pembayaran_huruf: formDataProjectDetail.nominal_pembayaran_terbilang || null,
-          tempat_ttd: formDataProjectDetail.tempat_ttd || null,
-          ruang_lingkup_pekerjaan: formDataProjectDetail.ruang_lingkup_pekerjaan || null,
-          denda_akibat_keterlambatan: formDataProjectDetail.denda_akibat_keterlambatan?.raw || null,
-          nama_notaris_pihak_2: formDataProjectDetail.nama_notaris_pihak_2 || null,
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-
-      console.log("✅ Berhasil:", response.data);
-      const currentTimestamp = new Date().toISOString();
-
-      const responseHistory = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/dynamic/crud/post/history`,
-        {
-          table_name: "projects",
-          record_id: 1,
-          action_type: "CREATE",
-          timestamp: currentTimestamp,
-          project_id: response.data.id,
-          project_name: projectNameInputParam || "",
-          description: "Create project details",
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-
-      console.log("✅ Berhasil:", responseHistory.data);
-      alert("✅ Project berhasil dibuat");
-    } catch (error) {
-      console.error("❌ Gagal:", error);
-      console.log("📦 Detail error dari API:", error.response?.data);
-      alert("❌ Project Gagal dibuat");
-    }
-  };
-
   const handleUpdateProject = async () => {
     try {
       const response = await axios.put(
@@ -438,11 +358,11 @@ const Project = () => {
         {
           table_name: "projects",
           record_id: 1,
-          action_type: "CREATE",
+          action_type: "UPDATE",
           timestamp: currentTimestamp,
           project_id: response.data.id,
           project_name: projectNameInputParam || "",
-          description: "Create project details",
+          description: "Pembaharuan project details",
         },
         {
           headers: { "Content-Type": "application/json" },
@@ -450,7 +370,7 @@ const Project = () => {
       );
 
       console.log("✅ Berhasil:", responseHistory.data);
-      alert("✅ Project berhasil dibuat");
+      alert("✅ Project berhasil diUpdate");
     } catch (error) {
       console.error("❌ Gagal Update:", error);
       console.log("📦 Detail error dari API:", error.response?.data);
@@ -472,11 +392,7 @@ const Project = () => {
       setErrors(newErrors);
       return;
     }
-    if (!projectId) {
-      // id kosong (null, undefined, atau 0, atau "")
-      handleCreateProject();
-      setIsModalOpen(true);
-    }
+
     if (projectId) {
       // id ADA → bisa jalanin update, fetch by id, dll
       handleUpdateProject();
@@ -512,9 +428,7 @@ const Project = () => {
 
   // mapping component untuk modals pop up
   const componentMapping = {
-    "SURAT PERNYATAAN": (card, ref) => (
-      <SuratPernyataan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
-    ),
+    "SURAT PERNYATAAN": (card, ref) => <SuratPernyataan ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} currFileType={currentFileType} projectName={projectNameInputParam} />,
     "RINGKASAN KONTRAK": (card, ref) => (
       <RingkasanKontrak ref={ref} documentId={card?.isNewDoc ? null : card?.documentId ?? card?.id} projectDetailData={projectDetail} onCreated={handleUpdateDocumentId} currFileType={currentFileType} projectName={projectNameInputParam} />
     ),
